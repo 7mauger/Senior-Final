@@ -96,5 +96,23 @@ exports.containsNumerical =function(str){
 
 
 exports.containsSpecial =function(str){
-
+    hasSpecial = false;
+    let special = [33,64,35,36,37,94,38,42]
+    try{
+        for(let x=0;x < str.length;x++){
+            for(let c=0;c < special.length;c++){
+                if(str[x].charCodeAt(0) == special[c]){
+                    hasSpecial = true;
+                    throw new PasswordMessage('Has special character!');
+                }
+            }
+        }
+        if(hasSpecial === false){
+            throw new PasswordMessage('Does not have special character!');
+        }
+    }
+    catch(e){
+        console.log(e.name+": "+e.message);
+        return hasSpecial;
+    }
 }
