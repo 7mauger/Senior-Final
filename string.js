@@ -116,3 +116,21 @@ exports.containsSpecial =function(str){
         return hasSpecial;
     }
 }
+
+exports.runAll = function(){
+    inRange(char,min,max);
+    exports.checkLength(str);
+    exports.containsUpper(str);
+    exports.containsSpecial(str);
+    exports.containsLower(str);
+    exports.containNumerical(str);
+}
+
+function checkAll(){
+    if(runAll === false){
+        return false;
+    }
+    else{
+        return true;
+    }
+}
