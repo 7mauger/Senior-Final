@@ -1,7 +1,6 @@
 const readline = require('readline');
 const testString  =require('./string');
 
-
 function getString(){
     let password = readline.createInterface({
         input: process.stdin,
@@ -11,7 +10,7 @@ function getString(){
     password.question("What would you like to set as your password?", function(str){
         let passesAllChecks = true;
         //Conditional Statements here.
-        if(inRange() === false || exports.checkLength() === false || exports.containsUpper() === false || exports.containsLower() === false || exports.containsNummerical() === false || exports.containsSpecial() === false){
+        if(exports.checkAll(str) === false){
             passesAllChecks = false;
         }
 

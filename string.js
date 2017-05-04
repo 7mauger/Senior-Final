@@ -117,20 +117,13 @@ exports.containsSpecial =function(str){
     }
 }
 
-exports.runAll = function(){
-    inRange(char,min,max);
-    exports.checkLength(str);
-    exports.containsUpper(str);
-    exports.containsSpecial(str);
-    exports.containsLower(str);
-    exports.containNumerical(str);
-}
-
-function checkAll(){
-    if(runAll === false){
-        return false;
+exports.checkAll = function(str){
+    let state = true;
+    let array = [checkLength(str),containsUpper(str),containsSpecial(str),containsLower(str),containNumerical(str)];
+    for(let a=0;a < array.length;a++){
+        if(array[a] === false){
+            state = false;
+        }
     }
-    else{
-        return true;
-    }
+    return state;
 }
