@@ -1,8 +1,8 @@
 var exports = module.exports = {};
 
 function PasswordMessage(m){
-    let name = "Password Message";
-    let message = m;
+    this.name = "Password Message";
+    this.message = m;
 }
 
 function inRange(char,min,max){
@@ -119,7 +119,7 @@ exports.containsSpecial =function(str){
 
 exports.checkAll = function(str){
     let state = true;
-    let array = [checkLength(str),containsUpper(str),containsSpecial(str),containsLower(str),containNumerical(str)];
+    let array = [exports.checkLength(str),exports.containsUpper(str),exports.containsSpecial(str),exports.containsLower(str),exports.containsNumerical(str)];
     for(let a=0;a < array.length;a++){
         if(array[a] === false){
             state = false;
